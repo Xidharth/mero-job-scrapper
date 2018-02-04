@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup
 # In[2]:
 
 
-filename = raw_input("What would you like to name the result csv file")
-query=raw_input("What should be the keyword to search? Eg. Developer,accountant,teacher...")
+filename = input("What would you like to name the result csv file")
+query= input("What should be the keyword to search? Eg. Developer,accountant,teacher...")
 
 
 # In[15]:
