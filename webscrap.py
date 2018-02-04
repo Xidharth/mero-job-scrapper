@@ -6,18 +6,19 @@
 
 import requests
 import csv
-
+from bs4 import BeautifulSoup
 
 # In[2]:
 
 
-from bs4 import BeautifulSoup
+filename = raw_input("What would you like to name the result csv file")
+query=raw_input("What should be the keyword to search? Eg. Developer,accountant,teacher...")
 
 
 # In[15]:
 
 
-myFile = open('example2.csv', 'w')
+myFile = open(filename+'.csv', 'w')
 writer = csv.writer(myFile)
 
 
@@ -32,7 +33,7 @@ bodylist=[]
 # In[5]:
 
 
-payload={'Keywords':'developer'} #change this to as per your query
+payload={'Keywords':query} #change this to as per your query
 
 
 # In[6]:
@@ -64,7 +65,7 @@ tableheadrow=table.find('tr').find_all('th')
 
 for row in tableheadrow:
     headerList.append(row.find('a').getText())
-print(headerList)
+#print(headerList)
 writer.writerow(headerList)
 
     
@@ -88,7 +89,7 @@ for row in tablebody:
     bodylist.append(row.find_all('td')[3].find('span').getText().replace('\t','').replace('\n',''))
     writer.writerow(bodylist)
     bodylist=[]
-print('finished')
+print('finished fetching data and the result is saved as '+filename+'.csv')
    
     
    
