@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup
 # In[2]:
 
 
-filename = input("What would you like to name the result csv file")
-query= input("What should be the keyword to search? Eg. Developer,accountant,teacher...")
+filename = input("What would you like to name the result csv file\n")
+query= input("What should be the keyword to search? Eg. Developer,accountant,teacher...\n")
 
 
 # In[15]:
@@ -94,7 +94,6 @@ print('finished fetching data and the result is saved as '+filename+'.csv')
     
    
  
-
 
 
 
